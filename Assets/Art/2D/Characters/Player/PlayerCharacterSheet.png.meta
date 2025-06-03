@@ -144,7 +144,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -948,7 +948,39 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PlayerCharacterSheet_0: 3849537246730981010
+      PlayerCharacterSheet_1: -4827891181140313291
+      PlayerCharacterSheet_10: 9028714909280222713
+      PlayerCharacterSheet_11: 2796962403775600193
+      PlayerCharacterSheet_12: 181476279177012431
+      PlayerCharacterSheet_13: 2065414965214815922
+      PlayerCharacterSheet_14: 2272575580281913146
+      PlayerCharacterSheet_15: 1539216530173986341
+      PlayerCharacterSheet_16: -8240820023711968088
+      PlayerCharacterSheet_17: -7459813320726214698
+      PlayerCharacterSheet_18: -5685868560831498011
+      PlayerCharacterSheet_19: -5495903570999487863
+      PlayerCharacterSheet_2: -602246273085778039
+      PlayerCharacterSheet_20: 3127593600718603441
+      PlayerCharacterSheet_21: 8662080937616159510
+      PlayerCharacterSheet_22: -79477310602365325
+      PlayerCharacterSheet_23: 4398693941155080282
+      PlayerCharacterSheet_24: 697217306089679048
+      PlayerCharacterSheet_25: 1904247762446505259
+      PlayerCharacterSheet_26: -4061601137678448169
+      PlayerCharacterSheet_27: 6833395369247704141
+      PlayerCharacterSheet_28: 7382445566619858423
+      PlayerCharacterSheet_29: -5479401823144407933
+      PlayerCharacterSheet_3: -6618009717014214091
+      PlayerCharacterSheet_30: 3058809473947757870
+      PlayerCharacterSheet_31: -7052673552639825886
+      PlayerCharacterSheet_4: -4876071933746418450
+      PlayerCharacterSheet_5: -2793830176846869148
+      PlayerCharacterSheet_6: 6176143207748199585
+      PlayerCharacterSheet_7: 4138778151605182542
+      PlayerCharacterSheet_8: -4958688839394661139
+      PlayerCharacterSheet_9: -3241921692245727242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
