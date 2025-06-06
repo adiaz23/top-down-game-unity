@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private Vector2 lookDirection = new Vector2(1, 0);
     private Vector2 currentInput;
     private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,17 +22,22 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Movement();
+        UpdateMoveInput();
     }
 
     void FixedUpdate()
     {
+        Move();
+    }
+
+    private void Move()
+    {
         Vector2 position = rb.position;
         position = position + currentInput * speed * Time.deltaTime;
-        rb.MovePosition(position);
+        rb.MovePosition(position);        
     }
-    
-    void Movement()
+
+    void UpdateMoveInput()
     {
         Vector2 move = moveAction.ReadValue<Vector2>();
         if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
