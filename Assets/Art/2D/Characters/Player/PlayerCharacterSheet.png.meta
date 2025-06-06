@@ -235,10 +235,10 @@ TextureImporter:
       name: PlayerCharacterSheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1522
-        width: 748
-        height: 526
+        x: 68
+        y: 2333
+        width: 135
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: PlayerCharacterSheet_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 2096
-        width: 151
-        height: 185
+        x: 319
+        y: 2342
+        width: 150
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,10 +279,10 @@ TextureImporter:
       name: PlayerCharacterSheet_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 2334
-        width: 135
-        height: 196
+        x: 581
+        y: 2322
+        width: 130
+        height: 187
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +301,10 @@ TextureImporter:
       name: PlayerCharacterSheet_3
       rect:
         serializedVersion: 2
-        x: 90
-        y: 1824
-        width: 86
-        height: 203
+        x: 836
+        y: 2341
+        width: 137
+        height: 188
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: PlayerCharacterSheet_4
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1790
-        width: 193
-        height: 750
+        x: 0
+        y: 2047
+        width: 218
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,10 +345,10 @@ TextureImporter:
       name: PlayerCharacterSheet_5
       rect:
         serializedVersion: 2
-        x: 333
-        y: 2080
-        width: 86
-        height: 203
+        x: 323
+        y: 1815
+        width: 119
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,10 +367,10 @@ TextureImporter:
       name: PlayerCharacterSheet_6
       rect:
         serializedVersion: 2
-        x: 348
-        y: 1837
-        width: 82
-        height: 196
+        x: 333
+        y: 2079
+        width: 86
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,10 +389,10 @@ TextureImporter:
       name: PlayerCharacterSheet_7
       rect:
         serializedVersion: 2
-        x: 581
-        y: 2322
-        width: 129
-        height: 187
+        x: 592
+        y: 2093
+        width: 83
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,10 +411,10 @@ TextureImporter:
       name: PlayerCharacterSheet_8
       rect:
         serializedVersion: 2
-        x: 592
-        y: 2093
-        width: 82
-        height: 196
+        x: 835
+        y: 2056
+        width: 119
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,10 +433,10 @@ TextureImporter:
       name: PlayerCharacterSheet_9
       rect:
         serializedVersion: 2
-        x: 594
-        y: 1801
-        width: 90
-        height: 204
+        x: 89
+        y: 1823
+        width: 88
+        height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,35 +452,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerCharacterSheet_10
-      rect:
-        serializedVersion: 2
-        x: 766
-        y: 1580
-        width: 258
-        height: 724
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9fdbbe1bf507c4d70800000000000000
-      internalID: 9028714909280222713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: PlayerCharacterSheet_11
       rect:
         serializedVersion: 2
-        x: 836
-        y: 2341
-        width: 137
-        height: 188
+        x: 83
+        y: 1569
+        width: 84
+        height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +477,10 @@ TextureImporter:
       name: PlayerCharacterSheet_12
       rect:
         serializedVersion: 2
-        x: 340
-        y: 1561
-        width: 88
-        height: 212
+        x: 46
+        y: 1543
+        width: 181
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,10 +499,10 @@ TextureImporter:
       name: PlayerCharacterSheet_13
       rect:
         serializedVersion: 2
-        x: 600
-        y: 1559
-        width: 84
-        height: 228
+        x: 27
+        y: 1522
+        width: 28
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -543,10 +521,10 @@ TextureImporter:
       name: PlayerCharacterSheet_14
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1300
-        width: 88
-        height: 213
+        x: 218
+        y: 1522
+        width: 22
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -565,10 +543,10 @@ TextureImporter:
       name: PlayerCharacterSheet_15
       rect:
         serializedVersion: 2
-        x: 353
-        y: 1286
-        width: 79
-        height: 223
+        x: 82
+        y: 1300
+        width: 87
+        height: 213
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -587,10 +565,10 @@ TextureImporter:
       name: PlayerCharacterSheet_16
       rect:
         serializedVersion: 2
-        x: 609
+        x: 352
         y: 1286
-        width: 79
-        height: 219
+        width: 80
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,10 +587,10 @@ TextureImporter:
       name: PlayerCharacterSheet_17
       rect:
         serializedVersion: 2
-        x: 865
+        x: 608
         y: 1286
-        width: 79
-        height: 251
+        width: 80
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -631,10 +609,10 @@ TextureImporter:
       name: PlayerCharacterSheet_18
       rect:
         serializedVersion: 2
-        x: 97
-        y: 1030
-        width: 79
-        height: 221
+        x: 865
+        y: 1286
+        width: 80
+        height: 218
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -653,10 +631,10 @@ TextureImporter:
       name: PlayerCharacterSheet_19
       rect:
         serializedVersion: 2
-        x: 338
-        y: 1025
-        width: 84
-        height: 229
+        x: 97
+        y: 1029
+        width: 80
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -675,10 +653,10 @@ TextureImporter:
       name: PlayerCharacterSheet_20
       rect:
         serializedVersion: 2
-        x: 595
+        x: 337
         y: 1025
-        width: 84
-        height: 228
+        width: 85
+        height: 229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -697,10 +675,10 @@ TextureImporter:
       name: PlayerCharacterSheet_21
       rect:
         serializedVersion: 2
-        x: 853
-        y: 1025
-        width: 83
-        height: 225
+        x: 595
+        y: 1024
+        width: 85
+        height: 229
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -719,10 +697,10 @@ TextureImporter:
       name: PlayerCharacterSheet_22
       rect:
         serializedVersion: 2
-        x: 95
-        y: 774
-        width: 80
-        height: 221
+        x: 852
+        y: 1025
+        width: 84
+        height: 226
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -741,10 +719,10 @@ TextureImporter:
       name: PlayerCharacterSheet_23
       rect:
         serializedVersion: 2
-        x: 351
-        y: 774
+        x: 94
+        y: 773
         width: 80
-        height: 218
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -763,10 +741,10 @@ TextureImporter:
       name: PlayerCharacterSheet_24
       rect:
         serializedVersion: 2
-        x: 608
-        y: 774
-        width: 79
-        height: 217
+        x: 351
+        y: 773
+        width: 80
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -785,10 +763,10 @@ TextureImporter:
       name: PlayerCharacterSheet_25
       rect:
         serializedVersion: 2
-        x: 812
-        y: 797
-        width: 129
-        height: 204
+        x: 607
+        y: 773
+        width: 80
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -807,10 +785,10 @@ TextureImporter:
       name: PlayerCharacterSheet_26
       rect:
         serializedVersion: 2
-        x: 62
-        y: 542
-        width: 132
-        height: 185
+        x: 812
+        y: 797
+        width: 130
+        height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -829,10 +807,10 @@ TextureImporter:
       name: PlayerCharacterSheet_27
       rect:
         serializedVersion: 2
-        x: 324
-        y: 533
-        width: 133
-        height: 217
+        x: 62
+        y: 542
+        width: 132
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -851,10 +829,10 @@ TextureImporter:
       name: PlayerCharacterSheet_28
       rect:
         serializedVersion: 2
-        x: 523
-        y: 521
-        width: 221
-        height: 192
+        x: 323
+        y: 532
+        width: 134
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -873,10 +851,10 @@ TextureImporter:
       name: PlayerCharacterSheet_29
       rect:
         serializedVersion: 2
-        x: 811
+        x: 522
         y: 521
-        width: 154
-        height: 190
+        width: 223
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -895,10 +873,10 @@ TextureImporter:
       name: PlayerCharacterSheet_30
       rect:
         serializedVersion: 2
-        x: 59
-        y: 266
-        width: 152
-        height: 192
+        x: 811
+        y: 521
+        width: 155
+        height: 191
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -917,10 +895,10 @@ TextureImporter:
       name: PlayerCharacterSheet_31
       rect:
         serializedVersion: 2
-        x: 325
-        y: 267
-        width: 130
-        height: 199
+        x: 58
+        y: 266
+        width: 154
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -935,11 +913,143 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PlayerCharacterSheet_32
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 267
+        width: 132
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65784ab029802f44dbc078b8948ad5d7
+      internalID: -1567003484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacterSheet_33
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1800
+        width: 119
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5dcf72761e57d74fa8c5ec3d4a51b97
+      internalID: -1855752716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacterSheet_34
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1544
+        width: 134
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d44dff0a1ed6ef488dbb2fba2c9f720
+      internalID: -593091534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacterSheet_35
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 1550
+        width: 113
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec97b0f65acec347a3aae069d302f4c
+      internalID: 1308962018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacterSheet_36
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1809
+        width: 122
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3767d2f64514dcd479ab6afb9a86582c
+      internalID: 1397907929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerCharacterSheet_37
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1580
+        width: 110
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a0d3f450aa22a4e99e0e0731afcf46
+      internalID: -1575367875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9c04fc4b845b6904e96c44d19faf219b
     internalID: 0
     vertices: []
     indices: 
@@ -975,6 +1085,12 @@ TextureImporter:
       PlayerCharacterSheet_3: -6618009717014214091
       PlayerCharacterSheet_30: 3058809473947757870
       PlayerCharacterSheet_31: -7052673552639825886
+      PlayerCharacterSheet_32: -1567003484
+      PlayerCharacterSheet_33: -1855752716
+      PlayerCharacterSheet_34: -593091534
+      PlayerCharacterSheet_35: 1308962018
+      PlayerCharacterSheet_36: 1397907929
+      PlayerCharacterSheet_37: -1575367875
       PlayerCharacterSheet_4: -4876071933746418450
       PlayerCharacterSheet_5: -2793830176846869148
       PlayerCharacterSheet_6: 6176143207748199585
