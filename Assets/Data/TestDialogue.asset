@@ -39,5 +39,5 @@ MonoBehaviour:
     speakerImage: {fileID: 0}
     isLastEntry: 1
     choices: []
-  characterName: Draft
-  characterImage: {fileID: 21300000, guid: 19493c213807a23419dfb58b1efa4edb, type: 3}
+  characterName: 
+  characterImage: {fileID: 0}
