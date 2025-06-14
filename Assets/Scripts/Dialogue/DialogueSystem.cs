@@ -100,39 +100,45 @@ namespace Dialogue
                 ShowContinueOptions(entry);
             }
         }
+        /// <summary>
+        /// Returns the speaker name using the following priority:
+        /// 1- DialogueEntry.speakerName
+        /// 2- DialogueData.characterName
+        /// 3- Character.characterName
+        ///  Returns "Unknown" if none are available
+        /// </summary>
         private string GetSpeakerName(DialogueEntry entry)
         {
-            // Priority 1: Entry-specific speaker name
             if (!string.IsNullOrEmpty(entry.speakerName))
                 return entry.speakerName;
             
-            // Priority 2: DialogueData character name
             if (!string.IsNullOrEmpty(currentDialogue.characterName))
                 return currentDialogue.characterName;
             
-            // Priority 3: Character class name (FALLBACK)
             if (currentCharacter != null && !string.IsNullOrEmpty(currentCharacter.characterName))
                 return currentCharacter.characterName;
             
-            // Default
             return "Unknown";
         }
         
+        /// <summary>
+        /// Returns the speaker icon/image using the following priority:
+        /// 1- DialogueEntry.speakerImage
+        /// 2- DialogueData.characterImage
+        /// 3- Character.characterSprite
+        ///  Returns null if none are available
+        /// </summary>
         private Sprite GetSpeakerIcon(DialogueEntry entry)
         {
-            // Priority 1: Entry-specific speaker icon
             if (entry.speakerImage != null)
                 return entry.speakerImage;
             
-            // Priority 2: DialogueData character icon
             if (currentDialogue.characterImage != null)
                 return currentDialogue.characterImage;
             
-            // Priority 3: Character class sprite (FALLBACK)
             if (currentCharacter != null && currentCharacter.characterSprite != null)
                 return currentCharacter.characterSprite;
             
-            // No icon available
             return null;
         }
 
