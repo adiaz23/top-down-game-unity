@@ -6,8 +6,8 @@ namespace Characters
     public class Enemy : Character
     {
         [Header("Enemy Specific")]
-        public DialogueData battleStartDialogue;
-        public DialogueData defeatDialogue;
+        [SerializeField] private DialogueData battleStartDialogue;
+        [SerializeField] private DialogueData defeatDialogue;
     
         private bool isDefeated = false;
     

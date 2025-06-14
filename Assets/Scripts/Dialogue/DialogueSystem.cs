@@ -10,16 +10,16 @@ namespace Dialogue
     public class DialogueSystem : MonoBehaviour
     {
         [Header("UI References")] public GameObject dialoguePanel;
-        public TextMeshProUGUI dialogueText;
-        public TextMeshProUGUI speakerNameText;
-        public Image speakerImage; // En el scriptable object esta como sprite TODO: OJO
-        public Button continueButton; // Este es el de skipear TODO: OJO lo quite de la escena
-        public Transform choicesParent;
-        public GameObject choiceButtonPrefab; // Este es el de opciones
+        [SerializeField] private TextMeshProUGUI dialogueText;
+        [SerializeField] private TextMeshProUGUI speakerNameText;
+        [SerializeField] private Image speakerImage; 
+        [SerializeField] private Button continueButton; // aka Skip button
+        [SerializeField] private Transform choicesParent;
+        [SerializeField] private GameObject choiceButtonPrefab; // this is the button created for each option
 
         [Header("Typewriter Effect")] 
-        public float typingSpeed = 0.05f;
-        public bool useTypewriterEffect = true;
+        [SerializeField] private float typingSpeed = 0.05f;
+        [SerializeField] private bool useTypewriterEffect = true;
 
         private DialogueData currentDialogue;
         private Character currentCharacter; 

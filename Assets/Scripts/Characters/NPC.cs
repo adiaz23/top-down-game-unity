@@ -6,8 +6,8 @@ namespace Characters
     public class NPC : Character
     {
         [Header("NPC Specific")]
-        public bool hasQuest = false;
-        public bool questCompleted = false;
+        [SerializeField] private bool hasQuest = false;
+        [SerializeField] private bool questCompleted = false;
     
         protected override void Start()
         {

@@ -16,7 +16,7 @@ namespace Dialogue
     [System.Serializable]
     public class DialogueEntry
     {
-        [TextArea(3, 10)] // minimo de lineas 3 y maximo 10
+        [TextArea(3, 10)] // min 3 lines and max 10
         public string text;
         public string speakerName;
         public Sprite speakerImage;

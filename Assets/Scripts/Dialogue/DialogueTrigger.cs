@@ -6,13 +6,13 @@ namespace Dialogue
     public class DialogueTrigger : MonoBehaviour
     {
         [Header("Dialogue Settings")] public DialogueData dialogueData;
-        public bool triggerOnStart = false;
-        public bool  triggerOnCollision = true;
-        public KeyCode interactionKey = KeyCode.E;
+        [SerializeField] private bool triggerOnStart = false;
+        [SerializeField] private bool  triggerOnCollision = true;
+        [SerializeField] private KeyCode interactionKey = KeyCode.E; //TODO: move this when possible
 
         [Header("Interaction Settings")] 
-        public GameObject interactionPrompt;
-        public float interactionRange = 2f;
+        [SerializeField] private GameObject interactionPrompt; // TODO: use this when it gets contact with a dialogue character
+        [SerializeField] private float interactionRange = 2f;
 
         private bool playerInRange = false;
         private GameObject player;
