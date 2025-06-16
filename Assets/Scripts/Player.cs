@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,9 +21,10 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        
         moveAction.Enable();
         attackAction.Enable();
-        
+
         attackAction.performed += Attack;
     }
 
