@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     [SerializeField] private InputAction moveAction;
     [SerializeField] private float speed = 4;
 
+    [Header("Attack System")]
+    [SerializeField] private InputAction attackAction;
+    [SerializeField] private GameObject ballPrefab;
+
+
     private Rigidbody2D rb;
     private Vector2 lookDirection = new Vector2(1, 0);
     private Vector2 currentInput;
@@ -18,6 +23,9 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         moveAction.Enable();
+        attackAction.Enable();
+        
+        attackAction.performed += Attack;
     }
 
     void Update()
@@ -34,7 +42,7 @@ public class Player : MonoBehaviour
     {
         Vector2 position = rb.position;
         position = position + currentInput * speed * Time.deltaTime;
-        rb.MovePosition(position);        
+        rb.MovePosition(position);
     }
 
     void UpdateMoveInput()
@@ -49,5 +57,13 @@ public class Player : MonoBehaviour
         animator.SetFloat("Look X", lookDirection.x);
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
+    }
+
+    void Attack(InputAction.CallbackContext context)
+    {
+        GameObject ballObject = Instantiate(ballPrefab, rb.position + new Vector2(1,0) * 0.5f, Quaternion.identity);
+        Projectile projectile = ballObject.GetComponent<Projectile>();
+        projectile.Launch(lookDirection, 300);
+        animator.SetTrigger("Shoot");
     }
 }
