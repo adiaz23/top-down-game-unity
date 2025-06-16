@@ -193,6 +193,24 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   speed: 4
+  attackAction:
+    m_Name: Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 96ff21e2-f44e-4cda-9fef-cc4787e35967
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 07b427c4-2ced-4d9a-9a75-9d6909895ef9
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Attack
+      m_Flags: 0
+    m_Flags: 0
+  ballPrefab: {fileID: 2196561625651798865, guid: 7cef660fd68387f4991d183d2ce22098, type: 3}
 --- !u!50 &7252648098699822646
 Rigidbody2D:
   serializedVersion: 5
