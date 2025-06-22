@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField] private GameObject InventoryMenu;
     [SerializeField] private ItemSlot[] itemSlots;
+
+    [SerializeField] private ItemSO[] itemSO;
     [SerializeField] private InputAction inventoryAction;
 
     private bool menuActivated;
@@ -49,6 +51,19 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return quantity;
+    }
+
+    public bool UseItem(string itemName)
+    {
+        foreach (var item in itemSO)
+        {
+            if (item.itemName == itemName)
+            {
+                bool usable = item.ApplyItem();
+                return usable;
+            }
+        }
+        return false;
     }
 
     public void DeselectAllSlots()

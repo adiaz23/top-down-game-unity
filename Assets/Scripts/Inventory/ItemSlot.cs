@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.AI;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -19,7 +20,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject selectedShader;
 
     private InventoryManager inventoryManager;
-   
+
     public bool thisItemSelected;
 
     public bool IsFull { get => isFull; set => isFull = value; }
@@ -29,7 +30,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();   
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
@@ -72,8 +73,27 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        inventoryManager.DeselectAllSlots();
-        SelectedShader.SetActive(true);
-        thisItemSelected = true;
+        if (thisItemSelected)
+        {
+            bool usable = inventoryManager.UseItem(itemName);
+            if (usable)
+            {
+                this.Quantity -= 1;
+                quantityText.text = this.Quantity.ToString();
+                if (this.Quantity <= 0)
+                    EmptySlot();
+            }
+        } else
+        {
+            inventoryManager.DeselectAllSlots();
+            SelectedShader.SetActive(true);
+            thisItemSelected = true;
+        }
+    }
+
+    private void EmptySlot()
+    {
+        quantityText.enabled = false;
+        itemImage.enabled = false;
     }
 }
