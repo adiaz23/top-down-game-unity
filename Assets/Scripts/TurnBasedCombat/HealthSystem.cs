@@ -5,7 +5,7 @@ namespace TurnBasedCombat
     public class HealthSystem : MonoBehaviour
     {
         [Header("Vida")] [SerializeField] private int maxHealth;
-        private int currentHealth;
+        [SerializeField] private int currentHealth;
         private bool IsDead { get; set; }
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;
