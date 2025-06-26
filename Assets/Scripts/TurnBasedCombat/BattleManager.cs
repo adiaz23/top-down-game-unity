@@ -7,6 +7,7 @@ namespace TurnBasedCombat
     {
         public static BattleManager instance;
         public PlayerController player;
+        public Player playerMovement;
         public EnemyController enemy;
         public CombatUIManager uiManager;
         private BattleState currentState;
@@ -23,6 +24,7 @@ namespace TurnBasedCombat
 
             enemy = enemyInstance;
             enemy.ResetTurn();
+            playerMovement.SetMovementEnabled(false);
             player.ResetTurn();
             uiManager.UpdateHealthBars();
             uiManager.HideActionOptions();
@@ -78,6 +80,7 @@ namespace TurnBasedCombat
             if (escaped)
             {
                 EndBattle(BattleState.Escape);
+                playerMovement.SetMovementEnabled(true);
             }
             else
             {
@@ -110,10 +113,12 @@ namespace TurnBasedCombat
             if (!player.IsAlive())
             {
                 EndBattle(BattleState.Defeat);
+                playerMovement.SetMovementEnabled(true);
             }
             else if (!enemy.IsAlive())
             {
                 EndBattle(BattleState.Victory);
+                playerMovement.SetMovementEnabled(true);
             }
             else
             {
@@ -126,6 +131,7 @@ namespace TurnBasedCombat
             if (!enemy.IsAlive())
             {
                 EndBattle(BattleState.Victory);
+                playerMovement.SetMovementEnabled(true);
             }
             else
             {
