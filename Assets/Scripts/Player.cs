@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        moveAction.Enable();
+        SetMovementEnabled(true);
     }
 
     void Update()
@@ -35,6 +35,14 @@ public class Player : MonoBehaviour
         Vector2 position = rb.position;
         position = position + currentInput * speed * Time.deltaTime;
         rb.MovePosition(position);        
+    }
+
+    public void SetMovementEnabled(bool isEnabled)
+    {
+        if (isEnabled)
+            moveAction.Enable();
+        else
+            moveAction.Disable();
     }
 
     void UpdateMoveInput()

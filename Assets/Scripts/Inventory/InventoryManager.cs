@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InventoryManager : MonoBehaviour
 {
 
+    public static InventoryManager Instance { get; private set; }
     [SerializeField] private GameObject InventoryMenu;
     [SerializeField] private ItemSlot[] itemSlots;
 
@@ -16,6 +17,14 @@ public class InventoryManager : MonoBehaviour
 
     void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);  
+        }
+        else
+            Destroy(gameObject);
+
         inventoryAction.Enable();
         inventoryAction.performed += OpenInventory;
     }
