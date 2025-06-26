@@ -17,8 +17,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip buttonClickSFX;
     
     [Header("Volume Settings")]
-    [SerializeField, Range(0f, 1f)] private float musicVolume = 0.5f;
-    [SerializeField, Range(0f, 1f)] private float sfxVolume = 0.5f;
+    [SerializeField, Range(0f, 1f)] private float musicVolume = 1f;
+    [SerializeField, Range(0f, 1f)] private float sfxVolume = 1f;
     
     // Dictionary to store all SFX clips
     private Dictionary<string, AudioClip> sfxClips = new Dictionary<string, AudioClip>();
