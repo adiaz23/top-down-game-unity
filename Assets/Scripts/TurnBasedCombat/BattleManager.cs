@@ -27,7 +27,7 @@ namespace TurnBasedCombat
             playerMovement.SetMovementEnabled(false);
             player.ResetTurn();
             uiManager.UpdateHealthBars();
-            uiManager.HideActionOptions();
+            uiManager.SetVisibilityCombatUI(true);
             uiManager.ShowMessage("¡Un enemigo salvaje apareció!");
             Invoke(nameof(BeginPlayerTurn), 1.5f);
         }
@@ -155,6 +155,12 @@ namespace TurnBasedCombat
                     uiManager.ShowMessage("Escapaste con éxito.");
                     break;
             }
+            Invoke(nameof(OcultarUICombat), 1.5f);
+        }
+        
+        private void OcultarUICombat()
+        {
+            uiManager.SetVisibilityCombatUI(false);
         }
     }
 }
