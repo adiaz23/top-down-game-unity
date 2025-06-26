@@ -46,10 +46,7 @@ namespace TurnBasedCombat
                 damageFlashEffect.PlayDamageEffect();
             }
 
-            if (getDamageSound != null)
-            {
-                ReproduceSound(getDamageSound);
-            }
+            AudioManager.Instance.PlaySFX(getDamageSound);
 
             if (currentHealth <= 0)
             {
@@ -83,24 +80,6 @@ namespace TurnBasedCombat
 
             if (deathEffect != null)
                 deathEffect.ResetEffect();
-        }
-
-        /// <summary>
-        /// Funcion para reproducir un sonido independiente de un gameobject
-        /// </summary>
-        private void ReproduceSound(AudioClip clip)
-        {
-            GameObject tempAudio = new GameObject("TempAudio");
-            tempAudio.transform.position = transform.position;
-
-            AudioSource tempSource = tempAudio.AddComponent<AudioSource>();
-            tempSource.clip = clip;
-            tempSource.volume = 1.0f; // volumen deseado
-            tempSource.pitch = 1.0f;
-            tempSource.spatialBlend = 0f; // 0 = 2D, 1 = 3D
-
-            tempSource.Play();
-            Destroy(tempAudio, clip.length); // eliminar al terminar
         }
 
         private void ShowFloatingText(int amount)
