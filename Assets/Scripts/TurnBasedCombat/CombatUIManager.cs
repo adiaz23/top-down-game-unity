@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace TurnBasedCombat
@@ -13,8 +14,8 @@ namespace TurnBasedCombat
         [SerializeField] private Button escapeButton;
         [SerializeField] private Button useItemButton;
 
-        [Header("Health Bars")] [SerializeField]
-        private Slider playerHealthBar;
+        [Header("Health Bars")]
+        [SerializeField] private Slider playerHealthBar;
 
         [SerializeField] private Slider enemyHealthBar;
 
@@ -24,8 +25,16 @@ namespace TurnBasedCombat
         private void Start()
         {
             // Asignar eventos a los botones
-            attackButton.onClick.AddListener(() => { BattleManager.instance.OnPlayerAction_Attack(); });
-            escapeButton.onClick.AddListener(() => { BattleManager.instance.OnPlayerAction_Escape(); });
+            attackButton.onClick.AddListener(() =>
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                BattleManager.instance.OnPlayerAction_Attack();
+            });
+            escapeButton.onClick.AddListener(() =>
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                BattleManager.instance.OnPlayerAction_Escape();
+            });
 
             /* TODO: Items
             useItemButton.onClick.AddListener(() =>
