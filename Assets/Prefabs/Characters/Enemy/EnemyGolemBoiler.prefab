@@ -36,7 +36,8 @@ Transform:
   m_LocalPosition: {x: -0.13559324, y: -1.8644068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2853440879635952874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6170908288251783741
@@ -130,8 +131,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  isPlayer: 0
   damageFlashEffect: {fileID: 7655822350770186095}
   deathEffect: {fileID: 4813922911756248821}
+  floatingTextPrefab: {fileID: 7972757612311422958, guid: f60003ec73006bc40b29e31d51b9d216, type: 3}
+  floatingTextPoint: {fileID: 2853440879635952874}
+  getDamageSound: {fileID: 0}
 --- !u!114 &6550754527201606757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,3 +341,34 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   deathSFXName: Death
+--- !u!1 &9049791784765245011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2853440879635952874}
+  m_Layer: 0
+  m_Name: FloatingTextPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2853440879635952874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9049791784765245011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 2.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3864886436534582006}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

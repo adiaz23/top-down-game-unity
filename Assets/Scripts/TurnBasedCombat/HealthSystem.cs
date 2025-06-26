@@ -1,26 +1,35 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TurnBasedCombat
 {
     public class HealthSystem : MonoBehaviour
     {
-        [Header("Vida")]
-        [SerializeField] private int maxHealth;
+        [Header("Vida")] [SerializeField] private int maxHealth;
         [SerializeField] private int currentHealth;
-        
-        [Header("Visual Effects")]
-        [SerializeField] private DamageFlashEffect damageFlashEffect;
+        [SerializeField] private bool isPlayer;
+
+        [Header("Visual Effects")] [SerializeField]
+        private DamageFlashEffect damageFlashEffect;
+
         [SerializeField] private DeathEffect deathEffect;
+        [SerializeField] private GameObject floatingTextPrefab;
+        [SerializeField] private Transform floatingTextPoint;
+
+        [Header("Sound Effects")] [SerializeField]
+        private AudioClip getDamageSound;
 
         private bool IsDead { get; set; }
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;
+
         private void Awake()
         {
             ResetHealth();
             if (damageFlashEffect == null)
                 damageFlashEffect = GetComponent<DamageFlashEffect>();
-            
+
             if (deathEffect == null)
                 deathEffect = GetComponent<DeathEffect>();
         }
@@ -31,10 +40,15 @@ namespace TurnBasedCombat
 
             currentHealth -= amount;
             currentHealth = Mathf.Max(currentHealth, 0);
-            
+            ShowFloatingText(amount);
             if (damageFlashEffect != null)
             {
                 damageFlashEffect.PlayDamageEffect();
+            }
+
+            if (getDamageSound != null)
+            {
+                ReproduceSound(getDamageSound);
             }
 
             if (currentHealth <= 0)
@@ -66,9 +80,40 @@ namespace TurnBasedCombat
             IsDead = false;
             if (damageFlashEffect != null)
                 damageFlashEffect.StopAllEffects();
-            
+
             if (deathEffect != null)
                 deathEffect.ResetEffect();
+        }
+
+        /// <summary>
+        /// Funcion para reproducir un sonido independiente de un gameobject
+        /// </summary>
+        private void ReproduceSound(AudioClip clip)
+        {
+            GameObject tempAudio = new GameObject("TempAudio");
+            tempAudio.transform.position = transform.position;
+
+            AudioSource tempSource = tempAudio.AddComponent<AudioSource>();
+            tempSource.clip = clip;
+            tempSource.volume = 1.0f; // volumen deseado
+            tempSource.pitch = 1.0f;
+            tempSource.spatialBlend = 0f; // 0 = 2D, 1 = 3D
+
+            tempSource.Play();
+            Destroy(tempAudio, clip.length); // eliminar al terminar
+        }
+
+        private void ShowFloatingText(int amount)
+        {
+            if (floatingTextPrefab != null && floatingTextPoint != null)
+            {
+                GameObject instance = Instantiate(floatingTextPrefab, floatingTextPoint.position,
+                    Quaternion.identity);
+                TextMeshPro floatingText = instance.GetComponent<TextMeshPro>();
+                floatingText.color = isPlayer ? Color.red : Color.white;
+                floatingText.text = (isPlayer ? "-" : "") + amount.ToString();
+                Destroy(instance, 1.1f);
+            }
         }
     }
 }

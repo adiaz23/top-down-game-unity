@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Comenzar-Highlithed_0: -5619424884607952297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
