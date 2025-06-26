@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -117,9 +118,28 @@ public class AudioManager : MonoBehaviour
         
     }
     
+    
     private void Start()
     {
-        PlayMainMenuMusic(); 
+        
+        #if UNITY_EDITOR
+            SwitchMusicDependingOnCurrentScene();
+        #else
+                        PlayMainMenuMusic();
+        #endif
+    }
+
+    private void SwitchMusicDependingOnCurrentScene()
+    {
+        switch ( SceneManager.GetActiveScene().name)
+        {
+            case "MainMenu":
+                PlayMainMenuMusic();
+                break;
+            case "Level1":
+                PlayMainWorldMusic();
+                break;
+        }
     }
     
 
