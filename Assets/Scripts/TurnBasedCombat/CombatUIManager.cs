@@ -37,19 +37,10 @@ namespace TurnBasedCombat
                 EventSystem.current.SetSelectedGameObject(null);
                 BattleManager.instance.OnPlayerAction_Escape();
             });
-
-            /* TODO: Items
             useItemButton.onClick.AddListener(() =>
             {
-                ItemData mockItem = new ItemData
-                {
-                    itemName = "Poción",
-                    effectType = ItemEffectType.Heal,
-                    amount = 25
-                };
-                BattleManager.Instance.OnPlayerAction_UseItem(mockItem);
+                InventoryManager.Instance.OpenInventory();
             });
-            */
 
             HideActionOptions();
             HideItemPanel();
