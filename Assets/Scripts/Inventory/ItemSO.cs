@@ -15,11 +15,11 @@ public class ItemSO : ScriptableObject
 
     public bool ApplyItem()
     {
-        Debug.Log("Inside switch");
+        GameObject player = GameObject.Find("Player");
         switch (statToChange)
         {
             case Definitions.ItemEffectType.Heal:
-                HealthSystem playerHealth = GameObject.Find("Player").GetComponent<HealthSystem>();
+                HealthSystem playerHealth = player.GetComponent<HealthSystem>();
                 if (playerHealth.CurrentHealth == playerHealth.MaxHealth)
                     return false;
                 else
@@ -32,7 +32,13 @@ public class ItemSO : ScriptableObject
                 Debug.Log("TODO: BoostDefence");
                 return true;
             case Definitions.ItemEffectType.BoostAttack:
-                Debug.Log("TODO: BoostAttack");
+                PlayerController playerStat = player.GetComponent<PlayerController>();
+                if (playerStat.AttackPower >= playerStat.AttackPowerLimit)
+                    return false;
+                else
+                {
+                    playerStat.AttackPower += amountToChangeStat;
+                }
                 return true;
         }
         return false;

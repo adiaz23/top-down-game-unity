@@ -4,11 +4,14 @@ namespace TurnBasedCombat
 {
     public class PlayerController : CombatActor
     {
-        [Header("Player Stats")] [SerializeField]
-        private int attackPower = 10;
+        [Header("Player Stats")]
+        [SerializeField] private int attackPower = 10;
+        [SerializeField] private int attackPowerLimit = 40;
 
         private bool hasActed = false;
         public bool HasActed => hasActed;
+        public int AttackPower { get => attackPower; set => attackPower = value; }
+        public int AttackPowerLimit { get => attackPowerLimit; set => attackPowerLimit = value; }
 
         public void ResetTurn()
         {
@@ -19,8 +22,8 @@ namespace TurnBasedCombat
         {
             if (!IsAlive()) return;
 
-            Debug.Log("Player attacks!");
-            enemy.ReceiveDamage(attackPower);
+            Debug.Log($"Player attacks with power: {AttackPower}");
+            enemy.ReceiveDamage(AttackPower);
             hasActed = true;
         }
 
