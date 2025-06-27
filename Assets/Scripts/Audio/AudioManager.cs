@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     [SerializeField] private AudioClip mainMenuMusic;
     [SerializeField] private AudioClip mainWorldMusic;
+    [SerializeField] private AudioClip battleMusic;
     
     [Header("SFX Clips")]
     [SerializeField] private AudioClip buttonClickSFX;
@@ -75,6 +77,12 @@ public class AudioManager : MonoBehaviour
         if (mainWorldMusic != null)
             PlayMusic(mainWorldMusic);
     }
+    public void PlayBattleMusic()
+    {
+        
+        if (battleMusic != null)
+            PlayMusic(battleMusic);
+    }
     
     private void PlayMusic(AudioClip clip)
     {
@@ -129,15 +137,24 @@ public class AudioManager : MonoBehaviour
         #endif
     }
 
+    private void Update()
+    {
+        SwitchMusicDependingOnCurrentScene();
+    }
+
     private void SwitchMusicDependingOnCurrentScene()
     {
+        
         switch ( SceneManager.GetActiveScene().name)
         {
             case "MainMenu":
                 PlayMainMenuMusic();
                 break;
-            case "Level1":
+            case "MainLevelScene" or "LevelOneScene" or "LevelTwoScene":
                 PlayMainWorldMusic();
+                break;
+            case "BattleScene":
+                PlayBattleMusic();
                 break;
         }
     }
