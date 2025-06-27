@@ -30,7 +30,17 @@ namespace TurnBasedCombat
 
         private void PerformAttack(PlayerController player)
         {
-            player.ReceiveDamage(attackPower);
+            if (player.DefensePower > 0)
+            {
+                attackPower -= player.DefensePower;
+                player.ReceiveDamage(attackPower);
+                attackPower += player.DefensePower;
+                player.DefensePower = player.DefensePowerDefault;
+            }
+            else
+            {
+                player.ReceiveDamage(attackPower);
+            }
         }
 
         private bool WantsToEscape()
