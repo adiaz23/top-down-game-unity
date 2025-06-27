@@ -2,8 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
-using UnityEngine.AI;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -13,14 +11,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private bool isFull;
     [SerializeField] private int maxNumberOfItems;
-
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
-
     [SerializeField] private GameObject selectedShader;
 
     public bool thisItemSelected;
-
     public bool IsFull { get => isFull; set => isFull = value; }
     public GameObject SelectedShader { get => selectedShader; set => selectedShader = value; }
     public int Quantity { get => quantity; set => quantity = value; }
@@ -88,5 +83,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         quantityText.enabled = false;
         itemImage.enabled = false;
+        itemName = "";
+        quantity = 0;
+        isFull = false;
+        itemSprite = null;
+        itemImage.sprite = null;
+        thisItemSelected = false;
+        selectedShader.SetActive(false);
     }
 }
