@@ -16,10 +16,12 @@ public class ItemSO : ScriptableObject
     public bool ApplyItem()
     {
         GameObject player = GameObject.Find("Player");
+        PlayerController playerStat = player.GetComponent<PlayerController>();
+        HealthSystem playerHealth = player.GetComponent<HealthSystem>();
+
         switch (statToChange)
         {
             case Definitions.ItemEffectType.Heal:
-                HealthSystem playerHealth = player.GetComponent<HealthSystem>();
                 if (playerHealth.CurrentHealth == playerHealth.MaxHealth)
                     return false;
                 else
@@ -29,10 +31,15 @@ public class ItemSO : ScriptableObject
                     return true;
                 }
             case Definitions.ItemEffectType.BoostDefence:
-                Debug.Log("TODO: BoostDefence");
+                if (playerStat.DefensePower >= playerStat.DefensePowerLimit)
+                    return false;
+                else
+                {
+                    playerStat.DefensePower += amountToChangeStat;
+                }
+                    Debug.Log($"TODO: BoostDefense: {playerStat.DefensePower}");
                 return true;
             case Definitions.ItemEffectType.BoostAttack:
-                PlayerController playerStat = player.GetComponent<PlayerController>();
                 if (playerStat.AttackPower >= playerStat.AttackPowerLimit)
                     return false;
                 else

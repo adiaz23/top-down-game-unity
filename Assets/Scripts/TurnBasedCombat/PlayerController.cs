@@ -7,11 +7,15 @@ namespace TurnBasedCombat
         [Header("Player Stats")]
         [SerializeField] private int attackPower = 10;
         [SerializeField] private int attackPowerLimit = 40;
+        [SerializeField] private int defensePower = 0;
+        [SerializeField] private int defensePowerLimit = 30;
 
         private bool hasActed = false;
         public bool HasActed => hasActed;
         public int AttackPower { get => attackPower; set => attackPower = value; }
         public int AttackPowerLimit { get => attackPowerLimit; set => attackPowerLimit = value; }
+        public int DefensePower { get => defensePower; set => defensePower = value; }
+        public int DefensePowerLimit { get => defensePowerLimit; set => defensePowerLimit = value; }
 
         public void ResetTurn()
         {

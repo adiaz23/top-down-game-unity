@@ -152,6 +152,7 @@ namespace TurnBasedCombat
             }
             currentState = BattleState.OutOfBattle;
             player.AttackPower = 10;
+            player.DefensePower = 0;
             Invoke(nameof(OcultarUICombat), 1.5f);
         }
         
