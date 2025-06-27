@@ -88,7 +88,7 @@ public class MainMenu : MonoBehaviour
     {
         switch (gameSceneName)
         {
-            case "Level1":
+            case "MainLevelScene":
                 AudioManager.Instance.PlayMainWorldMusic();
                 break;
             
