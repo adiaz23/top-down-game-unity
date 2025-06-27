@@ -2,8 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
-using UnityEngine.AI;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -13,25 +11,15 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private bool isFull;
     [SerializeField] private int maxNumberOfItems;
-
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
-
     [SerializeField] private GameObject selectedShader;
 
-    private InventoryManager inventoryManager;
-
     public bool thisItemSelected;
-
     public bool IsFull { get => isFull; set => isFull = value; }
     public GameObject SelectedShader { get => selectedShader; set => selectedShader = value; }
     public int Quantity { get => quantity; set => quantity = value; }
     public string ItemName { get => itemName; set => itemName = value; }
-
-    private void Awake()
-    {
-        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
-    }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
@@ -75,7 +63,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         if (thisItemSelected)
         {
-            bool usable = inventoryManager.UseItem(itemName);
+            bool usable = InventoryManager.Instance.UseItem(itemName);
             if (usable)
             {
                 this.Quantity -= 1;
@@ -85,7 +73,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             }
         } else
         {
-            inventoryManager.DeselectAllSlots();
+            InventoryManager.Instance.DeselectAllSlots();
             SelectedShader.SetActive(true);
             thisItemSelected = true;
         }
@@ -95,5 +83,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         quantityText.enabled = false;
         itemImage.enabled = false;
+        itemName = "";
+        quantity = 0;
+        isFull = false;
+        itemSprite = null;
+        itemImage.sprite = null;
+        thisItemSelected = false;
+        selectedShader.SetActive(false);
     }
 }
