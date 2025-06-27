@@ -1,6 +1,5 @@
 using Definitions;
 using TurnBasedCombat;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -8,7 +7,7 @@ public class ItemSO : ScriptableObject
 {
     public string itemName;
 
-    public Definitions.ItemEffectType statToChange = new();
+    public ItemEffectType statToChange = new();
 
     public int amountToChangeStat;
 
@@ -21,7 +20,7 @@ public class ItemSO : ScriptableObject
 
         switch (statToChange)
         {
-            case Definitions.ItemEffectType.Heal:
+            case ItemEffectType.Heal:
                 if (playerHealth.CurrentHealth == playerHealth.MaxHealth)
                     return false;
                 else
@@ -30,7 +29,7 @@ public class ItemSO : ScriptableObject
                     BattleManager.instance.UpdateHealthBars();
                     return true;
                 }
-            case Definitions.ItemEffectType.BoostDefence:
+            case ItemEffectType.BoostDefence:
                 if (playerStat.DefensePower >= playerStat.DefensePowerLimit)
                     return false;
                 else
@@ -39,7 +38,7 @@ public class ItemSO : ScriptableObject
                 }
                     Debug.Log($"TODO: BoostDefense: {playerStat.DefensePower}");
                 return true;
-            case Definitions.ItemEffectType.BoostAttack:
+            case ItemEffectType.BoostAttack:
                 if (playerStat.AttackPower >= playerStat.AttackPowerLimit)
                     return false;
                 else
