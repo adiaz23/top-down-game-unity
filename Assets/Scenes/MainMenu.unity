@@ -961,7 +961,7 @@ MonoBehaviour:
   backFromCreditsButton: {fileID: 320484287}
   musicVolumeSlider: {fileID: 307531794}
   sfxVolumeSlider: {fileID: 2037018004}
-  gameSceneName: Level1
+  gameSceneName: MainLevelScene
 --- !u!1 &704782101
 GameObject:
   m_ObjectHideFlags: 0

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      basic health potion_0: 3983710153775933943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

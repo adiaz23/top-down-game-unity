@@ -40,7 +40,7 @@ namespace TurnBasedCombat
 
             currentHealth -= amount;
             currentHealth = Mathf.Max(currentHealth, 0);
-            ShowFloatingText(amount);
+            ShowFloatingText(amount,false);
             if (damageFlashEffect != null)
             {
                 damageFlashEffect.PlayDamageEffect();
@@ -66,6 +66,7 @@ namespace TurnBasedCombat
             if (IsDead) return;
 
             currentHealth += amount;
+            ShowFloatingText(amount,true);
             currentHealth = Mathf.Min(currentHealth, maxHealth);
         }
 
@@ -85,15 +86,15 @@ namespace TurnBasedCombat
                 deathEffect.ResetEffect();
         }
 
-        private void ShowFloatingText(int amount)
+        private void ShowFloatingText(int amount, bool isHeal)
         {
             if (floatingTextPrefab != null && floatingTextPoint != null)
             {
                 GameObject instance = Instantiate(floatingTextPrefab, floatingTextPoint.position,
                     Quaternion.identity);
                 TextMeshPro floatingText = instance.GetComponent<TextMeshPro>();
-                floatingText.color = isPlayer ? Color.red : Color.white;
-                floatingText.text = (isPlayer ? "-" : "") + amount.ToString();
+                floatingText.color = isHeal ? Color.green : (isPlayer ? Color.red : Color.white);
+                floatingText.text = (isHeal ? "+" : (isPlayer ? "-" : "")) + amount.ToString();
                 Destroy(instance, 1.1f);
             }
         }

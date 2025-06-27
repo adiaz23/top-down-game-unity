@@ -33,6 +33,7 @@ namespace TurnBasedCombat
             player.ResetTurn();
             UpdateHealthBars();
             uiManager.SetVisibilityCombatUI(true);
+            uiManager.HideActionOptions();
             uiManager.ShowMessage("¡Un enemigo salvaje apareció!");
             Invoke(nameof(BeginPlayerTurn), 1.5f);
         }
@@ -61,6 +62,7 @@ namespace TurnBasedCombat
 
         public void OnPlayerAction_UseItem()
         {
+            uiManager.HideActionOptions();
             Invoke(nameof(HandleEnemyTurnOrEnd), 1f);
         }
         public void OnPlayerAction_Escape()
