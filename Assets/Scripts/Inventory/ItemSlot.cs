@@ -19,19 +19,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     [SerializeField] private GameObject selectedShader;
 
-    private InventoryManager inventoryManager;
-
     public bool thisItemSelected;
 
     public bool IsFull { get => isFull; set => isFull = value; }
     public GameObject SelectedShader { get => selectedShader; set => selectedShader = value; }
     public int Quantity { get => quantity; set => quantity = value; }
     public string ItemName { get => itemName; set => itemName = value; }
-
-    private void Awake()
-    {
-        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
-    }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
@@ -75,7 +68,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         if (thisItemSelected)
         {
-            bool usable = inventoryManager.UseItem(itemName);
+            bool usable = InventoryManager.Instance.UseItem(itemName);
             if (usable)
             {
                 this.Quantity -= 1;
@@ -85,7 +78,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             }
         } else
         {
-            inventoryManager.DeselectAllSlots();
+            InventoryManager.Instance.DeselectAllSlots();
             SelectedShader.SetActive(true);
             thisItemSelected = true;
         }
