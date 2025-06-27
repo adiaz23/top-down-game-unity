@@ -50,27 +50,7 @@ namespace TurnBasedCombat
             hasActed = true;
             return success;
         }
-        /* TODO: use Item
-        public void UseItem(ItemData item)
-        {
-            if (!IsAlive()) return;
-
-            Debug.Log($"Player uses {item.itemName}");
-
-            switch (item.effectType)
-            {
-                case ItemEffectType.Heal:
-                    healthSystem.Heal(item.amount);
-                    break;
-
-                case ItemEffectType.BoostAttack:
-                    attackPower += item.amount;
-                    break;
-            }
-            hasActed = true;
-        }
-        */
-
+        
         protected override void Die()
         {
             Debug.Log("Player died.");
