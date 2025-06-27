@@ -30,7 +30,7 @@ namespace MainMenuAndScene
         
         private void OnDrawGizmos()
         { 
-            Gizmos.color = Color.green;
+            Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(playerSpawnPosition, 0.5f);
         }
     }

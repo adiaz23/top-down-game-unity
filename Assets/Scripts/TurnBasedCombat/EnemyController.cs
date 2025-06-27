@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 namespace TurnBasedCombat
 {
     public class EnemyController : CombatActor
@@ -70,7 +70,10 @@ namespace TurnBasedCombat
         {
             if (other.CompareTag("Player"))
             {
+                if(SceneManager.GetActiveScene().name.Equals("LevelOneScene") || SceneManager.GetActiveScene().name.Equals("LevelTwoScene"))
+                    SceneManager.LoadScene("BattleScene");
                 BattleManager.instance.StartBattle(this);
+                
             }
         }
     }
