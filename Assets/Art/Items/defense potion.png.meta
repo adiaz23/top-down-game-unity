@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      defense potion_0: -5041006017519843560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
