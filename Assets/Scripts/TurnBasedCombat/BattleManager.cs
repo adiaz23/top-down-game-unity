@@ -61,6 +61,7 @@ namespace TurnBasedCombat
 
         public void OnPlayerAction_UseItem()
         {
+            uiManager.HideActionOptions();
             Invoke(nameof(HandleEnemyTurnOrEnd), 1f);
         }
         public void OnPlayerAction_Escape()
