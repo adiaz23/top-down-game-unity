@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7635870403154149662}
   - component: {fileID: 3997465671993272418}
   m_Layer: 0
-  m_Name: Potion
+  m_Name: HealthPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0adfa8ac2a1d1d64c946ae0004d6dd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Potion
-  quantity: 2
+  itemName: HealthPotion
+  quantity: 1
   sprite: {fileID: -5986076536372221526, guid: f5cf079d969f6c04fa46d686a95a778f, type: 3}
 --- !u!50 &7635870403154149662
 Rigidbody2D:
