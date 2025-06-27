@@ -1,11 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TurnBasedCombat
 {
     public class PlayerController : CombatActor
     {
+        
         [Header("Player Stats")] [SerializeField]
         private int attackPower = 10;
+        
+        [Header("Respawn Settings")]
+        [SerializeField] private float respawnDelay = 2f;
+
+        [SerializeField] private string respawnScene = "Level1";
+        
 
         private bool hasActed = false;
         public bool HasActed => hasActed;
@@ -66,7 +74,13 @@ namespace TurnBasedCombat
 
         protected override void Die()
         {
-            Debug.Log("Player died.");
+            Invoke(nameof(RespawnPlayer), respawnDelay);
         }
+
+        private void RespawnPlayer()
+        {
+            SceneManager.LoadScene(respawnScene);
+        }
+        
     }
 }
