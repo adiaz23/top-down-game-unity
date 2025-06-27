@@ -175,6 +175,7 @@ MonoBehaviour:
   itemSO:
   - {fileID: 11400000, guid: 362c9349aa6c5b54a9a569da02e7e07a, type: 2}
   - {fileID: 11400000, guid: 53a3f0d57f9a43749bfae0afa710d186, type: 2}
+  - {fileID: 11400000, guid: 2d44cb1aad3ad0d449739bbf9ee03a7b, type: 2}
   inventoryAction:
     m_Name: Inventory
     m_Type: 0

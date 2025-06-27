@@ -15,6 +15,7 @@ public class ItemSO : ScriptableObject
 
     public bool ApplyItem()
     {
+        Debug.Log("Inside switch");
         switch (statToChange)
         {
             case Definitions.ItemEffectType.Heal:
