@@ -6,19 +6,19 @@ namespace TurnBasedCombat
 {
     public class HealthSystem : MonoBehaviour
     {
-        [Header("Vida")] 
-        [SerializeField] private int maxHealth;
+        [Header("Vida")] [SerializeField] private int maxHealth;
         [SerializeField] private int currentHealth;
         [SerializeField] private bool isPlayer;
 
-        [Header("Visual Effects")] 
-        [SerializeField] private DamageFlashEffect damageFlashEffect;
+        [Header("Visual Effects")] [SerializeField]
+        private DamageFlashEffect damageFlashEffect;
+
         [SerializeField] private DeathEffect deathEffect;
         [SerializeField] private GameObject floatingTextPrefab;
         [SerializeField] private Transform floatingTextPoint;
 
-        [Header("Sound Effects")] 
-        [SerializeField] private AudioClip getDamageSound;
+        [Header("Sound Effects")] [SerializeField]
+        private AudioClip getDamageSound;
 
         private bool IsDead { get; set; }
         public int MaxHealth => maxHealth;
@@ -46,7 +46,10 @@ namespace TurnBasedCombat
                 damageFlashEffect.PlayDamageEffect();
             }
 
-            AudioManager.Instance.PlaySFX(getDamageSound);
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFX(getDamageSound);
+            }
 
             if (currentHealth <= 0)
             {

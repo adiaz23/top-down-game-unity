@@ -16,8 +16,13 @@ namespace TurnBasedCombat
         {
             if (instance == null) instance = this;
             else Destroy(gameObject);
+            currentState = BattleState.OutOfBattle;   
         }
 
+        public BattleState GetCurrentState()
+        {
+            return currentState;
+        }
         public void StartBattle(EnemyController enemyInstance)
         {
             currentState = BattleState.Start;
@@ -26,7 +31,7 @@ namespace TurnBasedCombat
             enemy.ResetTurn();
             playerMovement.SetMovementEnabled(false);
             player.ResetTurn();
-            uiManager.UpdateHealthBars();
+            UpdateHealthBars();
             uiManager.SetVisibilityCombatUI(true);
             uiManager.ShowMessage("¡Un enemigo salvaje apareció!");
             Invoke(nameof(BeginPlayerTurn), 1.5f);
@@ -54,20 +59,10 @@ namespace TurnBasedCombat
             Invoke(nameof(HandleEnemyTurnOrEnd), 1f);
         }
 
-            /*TODO: Item
-        public void OnPlayerAction_UseItem(ItemData item)
+        public void OnPlayerAction_UseItem()
         {
-            if (currentState != BattleState.PlayerTurn) return;
-
-            currentState = BattleState.Busy;
-            uiManager.HideActionOptions();
-
-            player.UseItem(item);
-            uiManager.UpdateHealthBars();
-
             Invoke(nameof(HandleEnemyTurnOrEnd), 1f);
         }
-        */
         public void OnPlayerAction_Escape()
         {
             if (currentState != BattleState.PlayerTurn) return;
@@ -155,12 +150,18 @@ namespace TurnBasedCombat
                     uiManager.ShowMessage("Escapaste con éxito.");
                     break;
             }
+            currentState = BattleState.OutOfBattle;
             Invoke(nameof(OcultarUICombat), 1.5f);
         }
         
         private void OcultarUICombat()
         {
             uiManager.SetVisibilityCombatUI(false);
+        }
+
+        public void UpdateHealthBars()
+        {
+            uiManager.UpdateHealthBars();
         }
     }
 }
