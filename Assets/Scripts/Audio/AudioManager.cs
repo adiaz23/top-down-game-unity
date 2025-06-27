@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Clips")]
     [SerializeField] private AudioClip mainMenuMusic;
     [SerializeField] private AudioClip mainWorldMusic;
+    [SerializeField] private AudioClip battleMusic;
     
     [Header("SFX Clips")]
     [SerializeField] private AudioClip buttonClickSFX;
@@ -75,6 +76,12 @@ public class AudioManager : MonoBehaviour
         if (mainWorldMusic != null)
             PlayMusic(mainWorldMusic);
     }
+    public void PlayBattleMusic()
+    {
+        
+        if (battleMusic != null)
+            PlayMusic(battleMusic);
+    }
     
     private void PlayMusic(AudioClip clip)
     {
@@ -131,6 +138,7 @@ public class AudioManager : MonoBehaviour
 
     private void SwitchMusicDependingOnCurrentScene()
     {
+        Debug.Log("Playing battle music");
         switch ( SceneManager.GetActiveScene().name)
         {
             case "MainMenu":
@@ -138,6 +146,12 @@ public class AudioManager : MonoBehaviour
                 break;
             case "Level1":
                 PlayMainWorldMusic();
+                break;
+            case "MainLevelScene":
+                PlayMainWorldMusic();
+                break;
+            case "test Alex 1":
+                PlayBattleMusic();
                 break;
         }
     }
