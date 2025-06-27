@@ -7,6 +7,7 @@ namespace TurnBasedCombat
     {
         public static BattleManager instance;
         public PlayerController player;
+        public Player playerMovement;
         public EnemyController enemy;
         public CombatUIManager uiManager;
         private BattleState currentState;
@@ -15,17 +16,23 @@ namespace TurnBasedCombat
         {
             if (instance == null) instance = this;
             else Destroy(gameObject);
+            currentState = BattleState.OutOfBattle;   
         }
 
+        public BattleState GetCurrentState()
+        {
+            return currentState;
+        }
         public void StartBattle(EnemyController enemyInstance)
         {
             currentState = BattleState.Start;
 
             enemy = enemyInstance;
             enemy.ResetTurn();
+            playerMovement.SetMovementEnabled(false);
             player.ResetTurn();
-            uiManager.UpdateHealthBars();
-            uiManager.HideActionOptions();
+            UpdateHealthBars();
+            uiManager.SetVisibilityCombatUI(true);
             uiManager.ShowMessage("¡Un enemigo salvaje apareció!");
             Invoke(nameof(BeginPlayerTurn), 1.5f);
         }
@@ -52,20 +59,10 @@ namespace TurnBasedCombat
             Invoke(nameof(HandleEnemyTurnOrEnd), 1f);
         }
 
-            /*TODO: Item
-        public void OnPlayerAction_UseItem(ItemData item)
+        public void OnPlayerAction_UseItem()
         {
-            if (currentState != BattleState.PlayerTurn) return;
-
-            currentState = BattleState.Busy;
-            uiManager.HideActionOptions();
-
-            player.UseItem(item);
-            uiManager.UpdateHealthBars();
-
             Invoke(nameof(HandleEnemyTurnOrEnd), 1f);
         }
-        */
         public void OnPlayerAction_Escape()
         {
             if (currentState != BattleState.PlayerTurn) return;
@@ -78,6 +75,7 @@ namespace TurnBasedCombat
             if (escaped)
             {
                 EndBattle(BattleState.Escape);
+                playerMovement.SetMovementEnabled(true);
             }
             else
             {
@@ -110,10 +108,12 @@ namespace TurnBasedCombat
             if (!player.IsAlive())
             {
                 EndBattle(BattleState.Defeat);
+                playerMovement.SetMovementEnabled(true);
             }
             else if (!enemy.IsAlive())
             {
                 EndBattle(BattleState.Victory);
+                playerMovement.SetMovementEnabled(true);
             }
             else
             {
@@ -126,6 +126,7 @@ namespace TurnBasedCombat
             if (!enemy.IsAlive())
             {
                 EndBattle(BattleState.Victory);
+                playerMovement.SetMovementEnabled(true);
             }
             else
             {
@@ -149,6 +150,18 @@ namespace TurnBasedCombat
                     uiManager.ShowMessage("Escapaste con éxito.");
                     break;
             }
+            currentState = BattleState.OutOfBattle;
+            Invoke(nameof(OcultarUICombat), 1.5f);
+        }
+        
+        private void OcultarUICombat()
+        {
+            uiManager.SetVisibilityCombatUI(false);
+        }
+
+        public void UpdateHealthBars()
+        {
+            uiManager.UpdateHealthBars();
         }
     }
 }

@@ -8,7 +8,8 @@ namespace Definitions
         Busy,
         Victory,
         Defeat,
-        Escape
+        Escape,
+        OutOfBattle
     }
 
     public enum ItemEffectType

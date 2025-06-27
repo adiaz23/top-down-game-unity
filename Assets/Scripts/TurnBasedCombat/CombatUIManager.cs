@@ -8,6 +8,7 @@ namespace TurnBasedCombat
     public class CombatUIManager : MonoBehaviour
     {
         [Header("UI Panels")] [SerializeField] private GameObject actionPanel;
+        [SerializeField] private GameObject enemyHealthPanel;
         [SerializeField] private GameObject itemPanel;
 
         [Header("Buttons")] [SerializeField] private Button attackButton;
@@ -24,6 +25,7 @@ namespace TurnBasedCombat
 
         private void Start()
         {
+            SetVisibilityCombatUI(false);
             // Asignar eventos a los botones
             attackButton.onClick.AddListener(() =>
             {
@@ -35,19 +37,10 @@ namespace TurnBasedCombat
                 EventSystem.current.SetSelectedGameObject(null);
                 BattleManager.instance.OnPlayerAction_Escape();
             });
-
-            /* TODO: Items
             useItemButton.onClick.AddListener(() =>
             {
-                ItemData mockItem = new ItemData
-                {
-                    itemName = "Poción",
-                    effectType = ItemEffectType.Heal,
-                    amount = 25
-                };
-                BattleManager.Instance.OnPlayerAction_UseItem(mockItem);
+                InventoryManager.Instance.OpenInventory();
             });
-            */
 
             HideActionOptions();
             HideItemPanel();
@@ -63,12 +56,7 @@ namespace TurnBasedCombat
         {
             actionPanel.SetActive(false);
         }
-
-        public void ShowItemPanel()
-        {
-            itemPanel.SetActive(true);
-        }
-
+        
         private void HideItemPanel()
         {
             itemPanel.SetActive(false);
@@ -94,6 +82,14 @@ namespace TurnBasedCombat
                 enemyHealthBar.maxValue = health.MaxHealth;
                 enemyHealthBar.value = health.CurrentHealth;
             }
+        }
+
+        public void SetVisibilityCombatUI(bool isVisible)
+        {
+            ShowMessage("");
+            actionPanel.SetActive(isVisible);
+            itemPanel.SetActive(isVisible);
+            enemyHealthPanel.SetActive(isVisible); 
         }
     }
 }

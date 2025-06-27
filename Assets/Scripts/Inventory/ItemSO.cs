@@ -1,3 +1,4 @@
+using Definitions;
 using TurnBasedCombat;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,6 +24,7 @@ public class ItemSO : ScriptableObject
                 else
                 {
                     playerHealth.Heal(amountToChangeStat);
+                    BattleManager.instance.UpdateHealthBars();
                     return true;
                 }
             case Definitions.ItemEffectType.BoostDefence:

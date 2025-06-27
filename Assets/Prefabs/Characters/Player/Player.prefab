@@ -316,7 +316,7 @@ MonoBehaviour:
   deathEffect: {fileID: 8197854262936440373}
   floatingTextPrefab: {fileID: 7972757612311422958, guid: f60003ec73006bc40b29e31d51b9d216, type: 3}
   floatingTextPoint: {fileID: 8438509552323307272}
-  getDamageSound: {fileID: 0}
+  getDamageSound: {fileID: 8300000, guid: 466a11cdb7632774cb4a75e7560793d6, type: 3}
 --- !u!114 &4573233746909837356
 MonoBehaviour:
   m_ObjectHideFlags: 0
