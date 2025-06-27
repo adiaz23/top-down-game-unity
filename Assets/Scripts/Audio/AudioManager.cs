@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -136,21 +137,23 @@ public class AudioManager : MonoBehaviour
         #endif
     }
 
+    private void Update()
+    {
+        SwitchMusicDependingOnCurrentScene();
+    }
+
     private void SwitchMusicDependingOnCurrentScene()
     {
-        Debug.Log("Playing battle music");
+        
         switch ( SceneManager.GetActiveScene().name)
         {
             case "MainMenu":
                 PlayMainMenuMusic();
                 break;
-            case "Level1":
+            case "MainLevelScene" or "LevelOneScene" or "LevelTwoScene":
                 PlayMainWorldMusic();
                 break;
-            case "MainLevelScene":
-                PlayMainWorldMusic();
-                break;
-            case "test Alex 1":
+            case "BattleScene":
                 PlayBattleMusic();
                 break;
         }
